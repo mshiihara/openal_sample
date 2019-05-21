@@ -29,7 +29,7 @@ void CALLBACK waveCallback(HWAVEOUT hWave, UINT uMsg, DWORD dwUser, DWORD dw1, D
 int main(void) {
 	
 	//波形を出力するオーディオデバイスを開く
-	MMRESULT r = waveOutOpen(&hWaveOut, WAVE_MAPPER, &waveFile.getFormat(), (DWORD)waveCallback, (DWORD)0, CALLBACK_FUNCTION);
+	waveOutOpen(&hWaveOut, WAVE_MAPPER, &waveFile.getFormat(), (DWORD)waveCallback, (DWORD)0, CALLBACK_FUNCTION);
 	
 	// バッファを確保
 	for (int i = 0; i < BUFFER_NUM; i++) {

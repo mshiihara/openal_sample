@@ -8,11 +8,11 @@ class WaveFile {
 private:
 	// チャンクを識別する為の値
 	static const uint32 CHUNK_RIFF_TAG = 'FFIR';
-	static const uint32 CHUNK_FMT_TAG = ' tmf';
+	static const uint32 CHUNK_FMT_TAG  = ' tmf';
 	static const uint32 CHUNK_DATA_TAG = 'atad';
 
 	// RIFFチャンクは通常のチャンク情報にフォーマット情報がつく
-	struct RIFFHeader {
+	struct RIFFHeader{
 		uint32 tag;
 		uint32 size;
 		uint32 format;

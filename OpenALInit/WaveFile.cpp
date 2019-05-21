@@ -26,8 +26,8 @@ void WaveFile::close() {
 	if (fp) { fclose(fp); }
 }
 
-WAVEFORMATEX const * WaveFile::getFormat() {
-	return &format;
+WAVEFORMATEX const * WaveFile::getFormat() { 
+	return &format; 
 }
 
 long WaveFile::getFileSize() { return fileSize; }
@@ -42,7 +42,7 @@ int WaveFile::read(void * dest, int length) {
 
 int WaveFile::parseHeader() {
 	// RIFFヘッダの読み込み
-
+	
 	// RIFFチャンクは通常のチャンク情報にフォーマット情報がつく
 	RIFFHeader riffHeader;
 	fread(&riffHeader, sizeof(RIFFHeader), 1, fp);
@@ -50,7 +50,7 @@ int WaveFile::parseHeader() {
 
 	// ファイルポインタの保存
 	long pos = ftell(fp);
-
+	
 	//fmt チャンクの取得
 	WaveChunk waveChunk;
 	if (parseWaveChunk(&waveChunk, CHUNK_FMT_TAG)) {
